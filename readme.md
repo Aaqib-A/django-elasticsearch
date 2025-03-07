@@ -8,8 +8,40 @@
 
 # Setup
 
-## Install ElasticSearch
+#### Install ElasticSearch
 ```
 sudo docker-compose -f docker/docker-compose-es.yml up -d
 ```
 
+#### Goto django folder
+```
+cd django_elasticsearch
+```
+
+#### Create Virtual Environment
+```
+python -m venv es-venv
+
+# Mac/Linux:
+source venv/bin/activate
+
+# Windows:
+.\es-venv\Scripts\activate.bat
+```
+
+#### - Install dependencies
+```
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+#### - Migrate database
+```
+python manage.py migrate
+python manage.py createsuperuser
+```
+
+#### - Run application
+```
+python manage.py runserver
+```
