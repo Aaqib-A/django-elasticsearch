@@ -1,3 +1,5 @@
+A Django web-app demonstrating faster search using ElasticSearch database
+
 
 # Resources
 
