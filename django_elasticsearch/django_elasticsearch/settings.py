@@ -31,12 +31,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "django_elasticsearch_dsl",
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # Our Apps
+    "book",
 ]
 
 MIDDLEWARE = [
@@ -80,6 +85,11 @@ DATABASES = {
     }
 }
 
+ELASTICSEARCH_DSL = {
+    'default': {
+        'hosts': 'http://localhost:9200'
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

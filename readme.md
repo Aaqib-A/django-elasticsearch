@@ -46,3 +46,15 @@ python manage.py createsuperuser
 ```
 python manage.py runserver
 ```
+
+#### - Run seed data
+```
+cd ../seed_data
+python fill_seed_data.py 
+```
+
+
+#### - Rebuild ElasticSearch Index
+```
+python manage.py search_index --rebuild
+```

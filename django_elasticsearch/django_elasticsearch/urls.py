@@ -15,8 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path, include
+from book.views.gui_view import index
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    re_path('book/', include('book.urls')),
+    path("", index),
+    
 ]
+
+admin.site.site_header = 'ElasticSearch Demo Server'
